@@ -1,0 +1,39 @@
+<svg width="1600" height="400" viewBox="0 0 1600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Creative workspace background</title>
+  <desc id="desc">Abstract gradient illustration with glowing shapes and code motifs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10243f"/>
+      <stop offset="48%" stop-color="#18365f"/>
+      <stop offset="100%" stop-color="#126f86"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.2" cy="0.2" r="0.7">
+      <stop offset="0%" stop-color="#f4b860" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f4b860" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.2" r="0.6">
+      <stop offset="0%" stop-color="#eb6f7d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#eb6f7d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="400" fill="url(#bg)"/>
+  <circle cx="250" cy="120" r="220" fill="url(#glow1)"/>
+  <circle cx="1320" cy="90" r="210" fill="url(#glow2)"/>
+  <rect x="930" y="90" width="470" height="220" rx="28" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <rect x="980" y="125" width="240" height="18" rx="9" fill="#f4b860" fill-opacity="0.9"/>
+  <rect x="980" y="163" width="340" height="12" rx="6" fill="#ffffff" fill-opacity="0.7"/>
+  <rect x="980" y="188" width="295" height="12" rx="6" fill="#ffffff" fill-opacity="0.55"/>
+  <rect x="980" y="225" width="150" height="40" rx="20" fill="#1da2a6" fill-opacity="0.95"/>
+  <text x="1005" y="251" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">UI / UX</text>
+  <circle cx="155" cy="265" r="7" fill="#ffffff" fill-opacity="0.8"/>
+  <circle cx="220" cy="230" r="7" fill="#ffffff" fill-opacity="0.8"/>
+  <circle cx="285" cy="190" r="7" fill="#ffffff" fill-opacity="0.8"/>
+  <circle cx="350" cy="155" r="7" fill="#ffffff" fill-opacity="0.8"/>
+  <path d="M155 265C180 250 195 245 220 230C250 212 265 205 285 190C310 172 330 165 350 155" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 14"/>
+  <path d="M80 330H1520" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
+  <path d="M120 310C220 275 340 275 440 310C540 345 660 345 760 310C860 275 980 275 1080 310C1180 345 1300 345 1400 310" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="6" stroke-linecap="round"/>
+</svg>
