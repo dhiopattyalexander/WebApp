@@ -4,20 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StaffController;
 
 Route::get('/', function () {
-    return view('layouts/home');
+    return view('layouts.home');
 });
 
 Route::get('/home', function () {
-    return view('layouts/home');
+    return view('layouts.home');
 });
 
 Route::get('/about', function () {
-    return view('layouts/about');
+    return view('layouts.about');
 });
 
-Route::get('/contact', function () {
-    return view('layouts/about');
-});
+Route::get('/login', function () {
+    return view('layouts.login');
+})->name('login');
 
-Route::get('/staff',[StaffController::class, 'index']
-);
+Route::resource('staff', StaffController::class);
