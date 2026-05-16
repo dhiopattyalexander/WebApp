@@ -47,11 +47,11 @@
 
                 <input type="text"
                        class="form-control"
-                       name="nama"
-                       value="{{ old('nama', $row->nama) }}"
+                       name="name"
+                       value="{{ old('name', $row->name) }}"
                        placeholder="Nama Staff">
 
-                @error('nama')
+                @error('name')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>
@@ -113,10 +113,12 @@
                 <label class="form-label">Foto</label>
 
                 <div class="mb-2">
-                    <img src="{{ asset('storage/' . ($row->foto ?? 'profile.jpg')) }}"
-                         width="120"
-                         class="img-thumbnail"
-                         alt="Foto Staff">
+                        @php
+                            $fotoPath = ($row->foto && \Illuminate\Support\Facades\Storage::disk('public')->exists($row->foto))
+                                ? asset('storage/' . $row->foto)
+                                : asset('images/profile.svg');
+                        @endphp
+                        <img src="{{ $fotoPath }}" width="120" class="img-thumbnail" alt="Foto Staff">
                 </div>
 
                 <input type="file"

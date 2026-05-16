@@ -32,18 +32,19 @@ $no = 1;
 
                 <!-- Data -->
                 <td>{{ $row->nip }}</td>
-                <td>{{ $row->nama }}</td>
+                <td>{{ $row->name }}</td>
                 <td>{{ $row->gender }}</td>
                 <td>{{ $row->email }}</td>
 
                 <!-- Foto -->
                 <td class="text-center">
 
-                    <img src="{{ asset('storage/' . ($row->foto ?? 'profile.jpg')) }}"
-                         width="80"
-                         height="80"
-                         class="img-thumbnail object-fit-cover"
-                         alt="Foto Staff">
+                    @php
+                        $fotoPath = ($row->foto && \Illuminate\Support\Facades\Storage::disk('public')->exists($row->foto))
+                           ? asset('storage/' . $row->foto)
+                           : asset('images/profile.svg');
+                    @endphp
+                    <img src="{{ $fotoPath }}" width="80" height="80" class="img-thumbnail object-fit-cover" alt="Foto Staff">
 
                 </td>
 

@@ -5,16 +5,18 @@
   <div class="card mb-3" style="max-width: 540px; width:100%;">
     <div class="row g-0">
       <div class="col-md-4 d-flex align-items-center justify-content-center p-3">
-        <img src="{{ asset('storage/' . ($row->foto ?? 'profile.jpg')) }}"
-             class="img-fluid rounded img-thumbnail"
-             alt="..."
-             width="180">
+        @php
+            $fotoPath = ($row->foto && \Illuminate\Support\Facades\Storage::disk('public')->exists($row->foto))
+                ? asset('storage/' . $row->foto)
+                : asset('images/profile.svg');
+        @endphp
+        <img src="{{ $fotoPath }}" class="img-fluid rounded img-thumbnail" alt="..." width="180">
       </div>
 
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title fw-bold border-bottom pb-2 mb-3">Detail Staff</h5>
-          <p class="card-text">Nama: {{ $row->nama }}</p>
+          <p class="card-text">Nama: {{ $row->name }}</p>
           <p class="card-text">NIP: {{ $row->nip }}</p>
           <p class="card-text">Jenis Kelamin: {{ $row->gender }}</p>
           <p class="card-text">Email: {{ $row->email }}</p>

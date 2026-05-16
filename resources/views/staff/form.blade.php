@@ -27,9 +27,9 @@
             </div>
             <div class="col-md-12">
                 <label for="basic-url" class="form-label">Nama</label>
-                <input type="text" class="form-control" name="nama"
+                <input type="text" class="form-control" name="name"
                     value="" placeholder="Nama Staff">
-                @error('nama')
+                @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

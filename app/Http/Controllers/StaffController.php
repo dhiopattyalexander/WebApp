@@ -34,15 +34,15 @@ class StaffController extends Controller
     {
         $request->validate([
             'nip' => 'required|unique:staff|max:3',
-            'nama' => 'required|max:50',
+            'name' => 'required|max:50',
             'gender' => 'required',
             'alamat' => 'required',
             'email' => 'required|unique:staff|max:50',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg|max:9000',
         ]);
 
-        // default foto
-        $foto = 'profile.jpg';
+        // default foto (kosongkan, gunakan fallback di view)
+        $foto = '';
 
         // upload foto jika ada
         if ($request->hasFile('foto')) {
@@ -51,7 +51,7 @@ class StaffController extends Controller
 
         Staff::create([
             'nip' => $request->nip,
-            'nama' => $request->nama,
+            'name' => $request->name,
             'gender' => $request->gender,
             'alamat' => $request->alamat,
             'email' => $request->email,
@@ -91,7 +91,7 @@ class StaffController extends Controller
     {
         $request->validate([
             'nip' => 'required|max:3|unique:staff,nip,' . $staff->id,
-            'nama' => 'required|max:50',
+            'name' => 'required|max:50',
             'gender' => 'required',
             'alamat' => 'required',
             'email' => 'required|max:50|unique:staff,email,' . $staff->id,
@@ -107,7 +107,7 @@ class StaffController extends Controller
 
         $staff->update([
             'nip' => $request->nip,
-            'nama' => $request->nama,
+            'name' => $request->name,
             'gender' => $request->gender,
             'alamat' => $request->alamat,
             'email' => $request->email,
